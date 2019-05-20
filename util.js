@@ -12,7 +12,7 @@
 function findMostReaptedWord(str){
     let counts = {}, mr=[];
 
-    str.slice().match(/\w+/g).forEach(w => { counts[w]=(counts[w]||0)+1 });
+    str.match(/\w+/g).forEach(w => { counts[w]=(counts[w]||0)+1 });
     const higger = Math.max.apply(null, Object.values(counts));
     for (let w in counts) {
       if (counts[w] === higger) {
