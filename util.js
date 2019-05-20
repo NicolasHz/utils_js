@@ -8,9 +8,10 @@
   }
 
 function findMostReaptedWord(str){
-    var counts = {}, mr=[], mc;
-    str.match(/\w+/g).forEach(function(w){ counts[w]=(counts[w]||0)+1 });
-    for (var w in counts) {
+    let counts = {}, mr=[];
+
+    str.slice().match(/\w+/g).forEach(w => { counts[w]=(counts[w]||0)+1 });
+    for (let w in counts) {
       if (counts[w] === Math.max.apply(null, Object.values(counts))) {
 		mr = [...mr, {word: w, times:  counts[w]}]      
       }
@@ -25,4 +26,3 @@ Mauris ornare eget nisl ac dictum. Nullam laoreet posuere cursus. Nulla non metu
 Outputs [{word: "sit", times: 4},{word: "amet", times: 4}]
 */
 }
-
